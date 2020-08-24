@@ -184,10 +184,7 @@ class Template_mixin(object):
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="http://apps.bdimg.com/libs/Chart.js/0.2.0/Chart.min.js"></script>
-    <!-- <link href="https://cdn.bootcss.com/echarts/3.8.5/echarts.common.min.js" rel="stylesheet">   -->
-    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="./classic.css">
-
+    <link rel="stylesheet" href="http://img.itest.info/seldom.css">
 
     %(stylesheet)s
 </head>
@@ -919,7 +916,7 @@ class HTMLTestRunner(Template_mixin):
 
         self.startTime = datetime.datetime.now()
 
-    def run(self, test, rerun, save_last_run):
+    def run(self, test, rerun=0, save_last_run=False):
         """Run the given test case or test suite."""
         result = _TestResult(self.verbosity, rerun=rerun, save_last_run=save_last_run)
         test(result)
